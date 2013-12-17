@@ -112,3 +112,11 @@ echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\
     https://nomnom.heroku.com/?request_id=$REQUEST_ID \
     > /dev/null
 ) &
+
+# Ensure search-index and mongodb are installed locally
+npm install search-index mongodb | indent
+node $bp_dir/bin/indexer.js $build_dir/forage.json
+cp -r $bp_dir/si $build_dir/
+cp -r $bp_dir/matcher $build_dir/
+cp -r $bp_dir/search-index.json $build_dir/
+
