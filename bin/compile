@@ -114,9 +114,12 @@ echo "export PATH=\"\$HOME/vendor/node/bin:\$HOME/bin:\$HOME/node_modules/.bin:\
 ) &
 
 # Ensure search-index and mongodb are installed locally
+status "Installing preindex deps"
+cd $build_dir
 npm install search-index mongodb | indent
-node $bp_dir/bin/indexer.js $build_dir/forage.json
-cp -r $bp_dir/si $build_dir/
-cp -r $bp_dir/matcher $build_dir/
-cp -r $bp_dir/search-index.json $build_dir/
+status "Preindexing..."
+node $bp_dir/bin/indexer.js forage.json
+#cp -r $bp_dir/si .
+#cp -r $bp_dir/matcher .
+#cp -r $bp_dir/search-index.json .
 
