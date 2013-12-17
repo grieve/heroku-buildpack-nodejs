@@ -7,6 +7,7 @@ if [ -f $1/package.json ]; then
       echo "Forage config found" && exit 0
   else
       echo "No Forage config found" && exit 1
+  fi
 else
   echo "no" && exit 1
 fi
