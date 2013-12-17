@@ -72,6 +72,8 @@ status "Installing dependencies"
 npm install --userconfig $build_dir/.npmrc --production 2>&1 | indent
 
 # Ensure search-index and mongodb are installed locally
+status "Ensuring modules are available..."
+npm install search-index mongodb | indent
 status "Preindexing..."
 cp $bp_dir/bin/indexer.js .
 node indexer.js forage.json 
