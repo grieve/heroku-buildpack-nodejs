@@ -139,7 +139,7 @@ getConfiguration(function(config){
         arrow("Iterating collections");
         mapCollection(db, 0, config, function(){
             arrow("Complete!");
-            process.exit(1);
+            process.exit(0);
         });
 
     });
