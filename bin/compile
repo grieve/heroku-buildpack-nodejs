@@ -74,7 +74,8 @@ npm install --userconfig $build_dir/.npmrc --production 2>&1 | indent
 # Ensure search-index and mongodb are installed locally
 status "Preindexing..."
 cp $bp_dir/bin/indexer.js .
-node indexer.js forage.json &
+node indexer.js forage.json 
+rm indexer.js
 
 status "Caching node_modules directory for future builds"
 rm -rf $cache_dir
