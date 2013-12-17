@@ -13,6 +13,8 @@ How do I use it?
 
 First, ensure your project is already using forage (or search-index straight), else this buildpack is wasted effort for you. Then create a configuration file called "forage.json" in the root of your application. This file must be a JSON formatted file with a very specific structure, an example and explanation of which is below.
 
+(Note, this config currently depends on the mongo config line being in the forage.json file. This is fine on a private repo, but obviously a terrible idea otherwise, and will be changed to an environmental variable in due course)
+
     {
 
         // a fully qualified mongo db config line
